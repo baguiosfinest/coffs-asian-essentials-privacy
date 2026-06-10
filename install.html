@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get the Coffs Asian Essentials App</title>
+  <meta name="description" content="Install the Coffs Asian Essentials loyalty app on Android or iPhone." />
+  <!-- ====================================================================
+       STORE LINKS — update IOS_URL once the App Store listing exists.
+       Android URL works automatically once the app is published on Play.
+       ==================================================================== -->
+  <script>
+    var ANDROID_URL = "https://play.google.com/store/apps/details?id=com.rgasian.loyalty";
+    var IOS_URL     = "";   // <-- paste App Store URL here when live, e.g. https://apps.apple.com/app/idXXXXXXXXXX
+    var ua = navigator.userAgent || "";
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+    var isAndroid = /Android/i.test(ua);
+    // Auto-redirect only when a destination is actually live.
+    if (isAndroid && ANDROID_URL) { location.replace(ANDROID_URL); }
+    else if (isIOS && IOS_URL)   { location.replace(IOS_URL); }
+  </script>
+  <style>
+    :root { --orange:#F26A1F; --forest:#1F5C2E; --cream:#FAF3E3; --ink:#1A2A20; --muted:#6b6b6b; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+           background:var(--orange); color:var(--ink); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:1.5rem; }
+    .card { background:var(--cream); border-radius:24px; max-width:420px; width:100%; padding:2rem 1.75rem 2.25rem; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.25); }
+    h1 { font-family:Georgia,serif; color:var(--forest); font-size:1.6rem; margin:.25rem 0 .25rem; }
+    p.sub { color:var(--muted); margin:0 0 1.5rem; }
+    a.btn { display:flex; align-items:center; justify-content:center; gap:.6rem; text-decoration:none; font-weight:700;
+            padding:1rem 1.25rem; border-radius:14px; margin:.6rem 0; font-size:1.05rem; }
+    a.android { background:var(--forest); color:#fff; }
+    a.ios { background:#111; color:#fff; }
+    a.ios.soon { background:#cfc8b6; color:#7a7363; pointer-events:none; }
+    .note { font-size:.85rem; color:var(--muted); margin-top:1.25rem; line-height:1.5; }
+    .brand { font-family:Georgia,serif; color:var(--orange); font-weight:700; letter-spacing:.5px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">COFFS ASIAN ESSENTIALS</div>
+    <h1>Get the App</h1>
+    <p class="sub">Loyalty stamps · Specials · Remittance rates</p>
+
+    <a class="btn android" href="https://play.google.com/store/apps/details?id=com.rgasian.loyalty">▶ Android — Google Play</a>
+    <a class="btn ios soon" id="iosBtn" href="#">🍎 iPhone — coming soon</a>
+
+    <p class="note">Scan failed? Open your app store and search <b>"Coffs Asian Essentials"</b>.</p>
+  </div>
+
+  <script>
+    // Activate the iOS button only when a real URL is set above.
+    if (IOS_URL) {
+      var b = document.getElementById("iosBtn");
+      b.classList.remove("soon");
+      b.href = IOS_URL;
+      b.textContent = "🍎 iPhone — App Store";
+    }
+  </script>
+</body>
+</html>
